@@ -34,6 +34,18 @@ def registrar(
 
         return False
 
+    if not all(
+        c.isalpha() or c.isspace()
+        for c in nombre
+    ):
+
+        messagebox.showerror(
+            "ERROR",
+            "El nombre solo puede contener letras"
+        )
+
+        return False
+
     # VALIDACIONES
 
     if c1 < 0 or c1 > 10:
